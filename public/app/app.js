@@ -2,10 +2,11 @@ angular.module('dvelop', [
   'dvelop.auth',
   'dvelop.community',
   'dvelop.search',
-  'dvelop.signup'
+  'dvelop.signup',
+  'ngRoute'
 ])
 
-.config(function($routeProvider, $httpProvider) {
+.config(function($routeProvider) {
   $routeProvider
     .when('/auth', {
       templateUrl: 'app/auth/auth.html',
@@ -27,5 +28,4 @@ angular.module('dvelop', [
       templateUrl: 'app/auth/auth.html',
       controller: 'AuthController'
     });
-
 });
