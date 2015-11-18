@@ -6,3 +6,27 @@ body {
 a {
   color: #00B7FF;
 }
+
+
+.searchcontainer {
+  /*margin-top: 50px;*/
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.userinfo {
+  background-color: #eee;
+}
+
+.userphotobox {
+  margin: 10px auto;
+  width: 200px;
+  height: 200px;
+  background-color: #aaa;
+}
+
+.userinfobox {
+  margin: 10px auto;
+  padding-left: 20px;
+  background-color: #bbb;
+}

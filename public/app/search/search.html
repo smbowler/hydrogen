@@ -1,1 +1,51 @@
-search
+<div class="search-template">
+  
+  <div class='container searchcontainer'>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-4">
+        <form name="searchForm" class="search-bar form-inline" action="/#/community">
+          <div class="form-group col-lg-6">
+            <input class="form-control" name="search" ng-model="search.input">
+          </div>
+          <!-- <button type="submit" class="btn btn-primary">Search</button> -->
+        </form>
+        <ul>
+            <!-- <li ng-repeat="user in search.users | filter:search.input">
+              First Name: {{user.firstName}}
+              Last Name: {{user.lastName}}
+              Location: {{user.address}}
+              Zip Code: {{user.zipCode}}
+            </li> -->
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <button type="button" class="btn btn-primary">Logout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" >
+      <div class="row-fluid" >
+        <div class="col-md-3" ng-repeat="user in search.users | filter:search.input">
+          <div class="userinfo">
+            <div class="userphotobox">
+              <!-- <img src=""> //insert picture from github -->
+            </div>
+            <p class="userinfobox">First Name: {{user.firstName}}</p>
+            <p class="userinfobox">Last Name: {{user.lastName}}</p>
+            <p class="userinfobox">Location: {{user.address}}</p>
+            <p class="userinfobox">Zip Code: {{user.zipCode}}</p>
+            <p class="userinfobox">Skill Level: {{user.skillLevel}}</p>
+            <p class="userinfobox">Experience: {{user.yearExperience}} years</p>
+            <p class="userinfobox">Interest: {{user.interest}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
