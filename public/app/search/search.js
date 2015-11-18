@@ -7,12 +7,15 @@ angular.module('dvelop.search', ['dvelop.auth'])
   search.users = SearchService.users;
   search.input = ''
   // $scope.search = '';
+
   search.logout = logout.logout;
 
 })
 
+//service for SearchService
 .factory('SearchService', function ($http){
 
+  //random User Generator
   var userGenerator = function(userNum){
     var users = [];
     var user = {}
