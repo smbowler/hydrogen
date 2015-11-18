@@ -9,17 +9,40 @@
           </div>
           <!-- <button type="submit" class="btn btn-primary">Search</button> -->
         </form>
-        <ul>
-            <!-- <li ng-repeat="user in search.users | filter:search.input">
-              First Name: {{user.firstName}}
-              Last Name: {{user.lastName}}
-              Location: {{user.address}}
-              Zip Code: {{user.zipCode}}
-            </li> -->
-        </ul>
       </div>
       <div class="col-md-2">
         <button type="button" class="btn btn-primary">Logout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="dropdownbox">
+    <div class="row">
+      <div class="dropdown dropdownunit">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Professional Level
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </div>
+      <div class="dropdown dropdownunit">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Tech Stack
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -32,14 +55,14 @@
         <div class="col-md-3" ng-repeat="user in search.users | filter:search.input">
           <div class="userinfo">
             <div class="userphotobox">
-              <!-- <img src=""> //insert picture from github -->
+              <img class="userphoto" src="{{ user.avatar }}">
             </div>
-            <p class="userinfobox">First Name: {{user.firstName}}</p>
-            <p class="userinfobox">Last Name: {{user.lastName}}</p>
+            <p class="userinfobox">Name: {{user.firstName}} {{user.lastName}}</p>
             <p class="userinfobox">Location: {{user.address}}</p>
-            <p class="userinfobox">Zip Code: {{user.zipCode}}</p>
+            <p class="userinfobox">Zip: {{user.zipCode}}</p>
             <p class="userinfobox">Skill Level: {{user.skillLevel}}</p>
             <p class="userinfobox">Experience: {{user.yearExperience}} years</p>
+            <p class="userinfobox">bestAt: {{user.bestAt}}</p>
             <p class="userinfobox">Interest: {{user.interest}}</p>
           </div>
         </div>
