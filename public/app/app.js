@@ -1,5 +1,6 @@
 angular.module('dvelop', [
   'dvelop.auth',
+  'firebase',
   'dvelop.community',
   'dvelop.search',
   'dvelop.signup',
@@ -28,4 +29,5 @@ angular.module('dvelop', [
       templateUrl: 'app/auth/auth.html',
       controller: 'AuthController'
     });
+
 });
