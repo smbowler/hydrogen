@@ -15,18 +15,39 @@ a {
 }
 
 .userinfo {
-  background-color: #eee;
+  /*background-color: #eee;*/
+  font-size: 0.9em;
+  margin-left: 10px;
+  line-height: 70%
 }
 
 .userphotobox {
   margin: 10px auto;
   width: 200px;
   height: 200px;
-  background-color: #aaa;
+
+  /*background-color: #aaa;*/
 }
 
 .userinfobox {
   margin: 10px auto;
   padding-left: 20px;
-  background-color: #bbb;
+  /*background-color: #bbb;*/
+}
+
+.userphoto {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 5px;
+}
+
+.dropdownbox {
+  margin: 10px auto;
+  width: 600px; 
+  /*position: relative;*/
+}
+
+.dropdownunit {
+  margin-right: 50px;
+  /*position: absolute;*/
 }
