@@ -18,7 +18,7 @@ angular.module('dvelop', [
     })
     .when('/search', {
       templateUrl: 'app/search/search.html',
-      controller: 'SearchController'
+      controller: 'SearchController as search'
     })
     .when('/community', {
       templateUrl: 'app/community/community.html',

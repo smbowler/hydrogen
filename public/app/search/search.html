@@ -1,1 +1,29 @@
-search
+<div class="search-template">
+  
+  <div class='container searchcontainer'>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-4">
+        <form name="searchForm" class="search-bar form-inline" action="/#/community">
+          <div class="form-group col-lg-6">
+            <input class="form-control" name="search" ng-model="search.input">
+          </div>
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <ul>
+            <li ng-repeat="user in search.users | filter:search.input">
+              First Name: {{user.firstName}}
+              Last Name: {{user.lastName}}
+              Location: {{user.address}}
+              Zip Code: {{user.zipCode}}
+            </li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <button type="button" class="btn btn-primary">Logout</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
