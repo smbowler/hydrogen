@@ -44,7 +44,16 @@ angular.module('dvelop.auth', [])
 				}
 			})
 	}
-});
+})
+
+.factory('logout', function(Auth, $location){
+		var logoutFn = function(){
+			Auth.$unauth();	
+			$location.path('/auth')
+			console.log('This was fired!');
+		}
+		return {logout: logoutFn};
+})
 
 
 //Firebase Authorization Factory

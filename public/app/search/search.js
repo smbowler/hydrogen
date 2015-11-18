@@ -1,13 +1,13 @@
-angular.module('dvelop.search', [])
+angular.module('dvelop.search', ['dvelop.auth'])
 
-.controller('SearchController', function (SearchService){
+.controller('SearchController', function (SearchService, Auth, logout, $location){
 
   var search = this;
 
   search.users = SearchService.users;
   search.input = ''
   // $scope.search = '';
-
+  search.logout = logout.logout;
 
 })
 
