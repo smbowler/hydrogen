@@ -15,6 +15,7 @@ angular.module('dvelop.signup', ['dvelop.auth'])
 	console.log(picture);
 	//$scope.widget = {title:'abc'};
 
+	$scope.addNew = function() {}
 
 });
 
