@@ -43,11 +43,14 @@ a {
 
 .dropdownbox {
   margin: 10px auto;
-  width: 600px; 
+  /*width: 600px;*/
+  /*display: float;*/
+  float: right;
   /*position: relative;*/
 }
 
 .dropdownunit {
   margin-right: 50px;
+  float: right;
   /*position: absolute;*/
 }
