@@ -54,3 +54,7 @@ a {
   float: right;
   /*position: absolute;*/
 }
+
+.dropdown-container {
+  margin: auto;
+}
