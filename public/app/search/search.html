@@ -17,43 +17,21 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="dropdownbox">
-    <div class="row">
-      <div class="dropdown dropdownunit">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Professional Level
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a href="#">Advanced</a></li>
-          <li><a href="#">Intermediate</a></li>
-          <li><a href="#">Novice</a></li>
-        </ul>
-      </div>
-      <div class="dropdown dropdownunit">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Tech Stack
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a href="#">AngularJS</a></li>
-          <li><a href="#">ReactJS</a></li>
-          <li><a href="#">BackboneJS</a></li>
-          <li><a href="#">NodeJS</a></li>
-          <li><a href="#">ExpressJS</a></li>
-          <li><a href="#">MongoDB</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<div class="dropdown-container" align="center">
+        <label>Professional Level: </label>
+          <select ng-model="search.level">
+            <option value="">Professional Level </option>
+            <option value="Advanced">Advanced</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Novice">Novice</option>
+          </select>
 </div>
 
 <div class="container">
   <div class="row">
     <div class="col-md-12" >
       <div class="row-fluid" >
-        <div class="col-md-3" ng-repeat="(key, user) in search.users | filter:search.input">
+        <div class="col-md-3" ng-repeat="user in search.users | filter: search.input | filter: search.level">
           <div class="userinfo">
             <div class="userphotobox">
               <img class="userphoto" src="{{ user.profileImageUrl }}">
