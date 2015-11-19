@@ -36,7 +36,6 @@ npm install
 From within the root/public directory:
 
 ```sh
-cd public
 bower install
 ```
 
