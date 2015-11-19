@@ -1,1 +1,117 @@
-signup
+<!DOCTYPE html>
+<html>
+<head>
+<title>Checkbox Control</title>
+</head>
+<body ng-controller="SignupController" align="center">
+<h1 align="center">SignUp Form</h1><br>
+
+<div align="center">
+	<h2>Welcome, <span ng-bind='name'></span>!</h2><br>
+	We're glad you're here. We just need a bit more information to get you set up. 
+</div>
+<br><br>
+
+<div class="container" align="center">
+						<div class="user" ng-style="{'background-image':'url({{picture.title}})'}"</div>
+							
+						</div><br><br><br>
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Full Name</label>
+                    <div class="col-sm-9">
+                        <input name="username.title" type="text" id="firstName" class="form-control" ng-value="username.title" autofocus>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email</label>
+                    <div class="col-sm-9">
+                        <input name="email.title" type="email" id="email" class="form-control" ng-value="email.title" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location" class="col-sm-3 control-label">Location</label>
+                    <div class="col-sm-9">
+                        <input type="location" id="location" placeholder="City, State" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
+                    <div class="col-sm-9">
+                        <input type="date" id="birthDate" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="country" class="col-sm-3 control-label">Experience Level</label>
+                    <div class="col-sm-9">
+                        <select id="country" class="form-control">
+                            <option>Beginner</option>
+                            <option>Intermediate</option>
+                            <option>Professional</option>
+                        
+                        </select>
+                    </div>
+                </div> <!-- /.form-group -->
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Gender</label>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="femaleRadio" value="Female">Female
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="maleRadio" value="Male">Male
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="uncknownRadio" value="Unknown">Unknown
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- /.form-group -->
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Are you willing to be a mentor?</label>
+                    <div class="col-sm-9">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="calorieCheckbox" value="Yes">Yes
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="saltCheckbox" value="No">No
+                            </label>
+                        </div>
+
+                    </div>
+                </div> <!-- /.form-group -->
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox">I accept <a href="#">terms</a>
+                            </label>
+                        </div>
+                    </div>
+                </div> <!-- /.form-group -->
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <button type="submit" class="btn btn-primary btn-block">Save Profile</button>
+                    </div>
+                </div>
+            </form> <!-- /form -->
+        </div> <!-- ./container -->
+
+
+
+
+
+</body>
+</html>
