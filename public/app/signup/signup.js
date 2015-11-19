@@ -27,7 +27,7 @@
 
 angular.module('dvelop.signup', ['dvelop.auth'])
 
-.controller('SignupController', function($scope, UserStore, Auth){
+.controller('SignupController', function($scope, UserStore, Auth, $location){
  var signup = this;
  signup.authdata = UserStore;
 
@@ -58,11 +58,12 @@ angular.module('dvelop.signup', ['dvelop.auth'])
  var name = $scope.currentUser.displayName;
  console.log(name);
 
- $scope.user.username = $scope.currentUser.displayName;
- $scope.user.email = $scope.currentUser.email;
+ $scope.user.displayName = $scope.currentUser.displayName;
+ $scope.user.emailAddress = $scope.currentUser.email;
  $scope.user.birthday = "";
  $scope.user.professionalLevel = "";
- $scope.user.picture = $scope.currentUser.imageURL;
+ $scope.user.profileImageUrl = $scope.currentUser.imageURL;
+ console.log($scope.user.profileImageUrl);
  $scope.user.address = '';
  $scope.user.bestAt = '';
  $scope.user.helpAvail = true;
@@ -71,7 +72,7 @@ angular.module('dvelop.signup', ['dvelop.auth'])
  // $scope.username = {title: name};
  // $scope.email = {title: email};
  // $scope.picture = {title: picture};
- console.log(picture);
+ //console.log(picture);
  //$scope.widget = {title:'abc'};
  })
 
@@ -80,6 +81,12 @@ angular.module('dvelop.signup', ['dvelop.auth'])
  // var picture = $scope.currentUser.imageURL;
 
  // $scope.user.name = $scope.currentUser.displayName;
+$scope.saveData = function(){
+	var userRef = new Firebase("https://amber-inferno-2562.firebaseio.com/users"); 
+	userRef.child($scope.authData.github.id).update($scope.user);
+	$location.path('/search'); //object version
+	console.log('saveData fired!',$scope.user);
+}
 
 });
 
