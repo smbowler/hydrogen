@@ -36,14 +36,14 @@
 <h1 align="center">SignUp Form</h1><br>
 
 <div align="center">
-	<h2>Welcome, <span ng-bind='name'></span>!</h2><br>
+	<h2>Welcome, <span ng-bind='user.username'></span>!</h2><br>
 	We're glad you're here. We just need a bit more information to get you set up. 
 </div>
 <br><br>
 
 <div class="container" align="center">
+
 						<div class="user" ng-model="user.profileImageURL" ng-style="{'background-image':'url({{picture.title}})'}"></div>
-							
 						</div><br><br><br>
             <form class="form-horizontal" role="form">
                 <div class="form-group">
@@ -57,18 +57,21 @@
                     <label for="email" class="col-sm-3 control-label">Email</label>
                     <div class="col-sm-9">
                         <input name="email.title" type="email" id="email" class="form-control" ng-model="user.emailAddress" ng-value="email.title" >
+
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="location" class="col-sm-3 control-label">Location</label>
                     <div class="col-sm-9">
                         <input type="text" id="location" placeholder="City, State" ng-model="user.address" class="form-control">
+
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="job" class="col-sm-3 control-label">Job</label>
                     <div class="col-sm-9">
                         <input type="text" id="job" placeholder="What Puts Food on the Table" ng-model="user.job" class="form-control">
+                        <input type="date" id="birthDate" class="form-control" ng-model="user.birthday">
                     </div>
                 </div>
                 <div class="form-group">
@@ -174,7 +177,8 @@
                 </div> <!-- /.form-group -->
                 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
-                        <button type="submit" ng-click="addNew(user)" class="btn btn-primary btn-block">Save Profile</button>
+                        <button type="submit" class="btn btn-primary btn-block" ng-click= "saveData()">Save Profile</button>
+
                     </div>
                 </div>
             </form> <!-- /form -->
