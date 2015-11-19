@@ -10,14 +10,19 @@ angular.module('dvelop.auth', [])
 	return usersRef;
 })
 
-.controller('AuthController', function($scope, Auth, $location, UsersRef){
+.factory('UserStore', function(){
+	var userStore = {};
+	return userStore;
+})
+
+.controller('AuthController', function($scope, Auth, $location, UsersRef, UserStore){
 	Auth.$onAuth(function(authData){
 		$scope.authData = authData;
 
 		if (authData === null){
 			console.log('User is not logged in yet.');
 		} else {
-			console.log('User logged in as ', authData.name);
+			console.log('User logged in as ', authData);
 			$location.path('/search')
 		}
 	})
@@ -25,7 +30,25 @@ angular.module('dvelop.auth', [])
 	$scope.login = function(){
 		Auth.$authWithOAuthPopup("github")
 			.then(function(authData){
-				console.log(authData);
+				if (UserStore[authData.github.id]){
+					$location.path('/search');
+				} else{	
+					UserStore[authData.github.id] = {
+						userID: authData.github.id,
+						displayName: authData.github.displayName,
+						email: authData.github.email,
+						imageURL: authData.github.profileImageURL
+					}
+				}
+				console.log(UserStore); 
+				$location.path('/signup');
+
+
+				//console.log(authData.github.id);
+				//console.log(authData.github.displayName);
+				//console.log(authData.github.profileImageURL);
+
+
 				$scope.checkUsersinFirebase(authData.github.id, function(result){
 					if (authData & !result){
 						//save user to Firebase
@@ -54,6 +77,9 @@ angular.module('dvelop.auth', [])
 		}
 		return {logout: logoutFn};
 })
+
+.factory('')
+
 
 
 //Firebase Authorization Factory
